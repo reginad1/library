@@ -6,7 +6,7 @@ class Users::SessionsController < Devise::SessionsController
    @user = User.find_by(email: params[:email])
    if @user.valid_password? params[:password]
     sign_in @user
-    @current_user = @user
+    current_user = @user
    end
   end
 
